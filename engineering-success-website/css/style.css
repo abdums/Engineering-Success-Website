@@ -1,0 +1,182 @@
+/* style.css — Classic academic theme for Panama Canal case study site */
+
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+/* Typography */
+:root {
+  --accent: #003366; /* navy */
+  --accent-2: #00509e; /* lighter blue */
+  --muted: #666;
+  --bg: #f6f8fa;
+  --card-bg: #fff;
+  --max-width: 980px;
+  --radius: 10px;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background: var(--bg);
+  color: #222;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container utility */
+.container {
+  width: 92%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #fff;
+  padding: 18px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand h1 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+.brand .subtitle {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 12px;
+}
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 180ms ease, transform 120ms ease;
+  display: inline-block;
+}
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Main content and cards */
+.main-content {
+  padding: 28px 0 60px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: 0 6px 18px rgba(22, 29, 37, 0.06);
+  margin-bottom: 36px;
+}
+.lead {
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+h2 {
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+h3 {
+  font-size: 1.02rem;
+  margin-top: 14px;
+}
+
+/* Callout and aside */
+.callout {
+  border-left: 4px solid var(--accent);
+  padding: 12px 16px;
+  margin: 18px 0;
+  background: #fbfdff;
+  border-radius: 6px;
+}
+
+/* Links and lists */
+a {
+  color: var(--accent-2);
+}
+ul {
+  margin: 10px 0 18px 18px;
+}
+.references-list {
+  margin-top: 12px;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 0;
+  margin-top: 18px;
+  text-align: center;
+}
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .nav {
+    flex-wrap: wrap;
+  }
+  .brand h1 {
+    font-size: 1.2rem;
+  }
+  .card {
+    padding: 18px;
+  }
+}
+
+/* subtle fade-in animations */
+.card {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: cardIn 420ms ease forwards;
+}
+@keyframes cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
